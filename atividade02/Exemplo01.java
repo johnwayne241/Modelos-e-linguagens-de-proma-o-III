@@ -5,7 +5,7 @@ saldo += valor;
 }
 public void sacar(double valor) {
 if (valor > saldo) {
-throw new IllegalArgumentException("Saldo insuficiente");
+throw new IllegalArgumentException("Saldo insuficiente");   //THROW // excecao unchecked
 }
 saldo -= valor;
 
@@ -15,7 +15,7 @@ public class Exemplo01 {
 public static void main(String[] args) {
 ContaBancaria conta = new ContaBancaria();
 conta.depositar(100.00);
-try {
+try {                                   //try/catch
 conta.sacar(500.00);
 } catch (IllegalArgumentException excecao) {
 System.out.println("Erro: " + excecao.getMessage());
