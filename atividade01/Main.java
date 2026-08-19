@@ -1,17 +1,18 @@
+
 interface Conta {       // INTERFACE
     void depositar(double valor);
 }
 
 class ContaBancaria implements Conta {  //CLASSE
     protected double saldo; //Atributo SALDO
+    @Override
     public void depositar(double valor) {
         saldo += valor;
         System.out.println("Depósito realizado. Saldo: R$ " + saldo);
     }
 }
 
-class ContaPoupanca extends ContaBancaria { // HERANÇA A herança aparece no "extends ContaBancaria"
-}
+
 
 class ContaCorrente extends ContaBancaria {
     @Override  // SOBRESCRITA 
